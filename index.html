@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="경남 단기 농어촌유학">
 <meta property="og:title" content="경상남도로 떠나는 단기형 농촌유학 | 흙을 밟는 도시 아이들">
 <meta property="og:description" content="신청기간 2026. 10. 8.(목)~10. 14.(수), 운영기간 11~12월. 바다와 숲이 교실이 되는 일주일, 경남의 작은 학교들이 서울 학생을 기다려요!">
-<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:image" content="https://short.sen.re.kr/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -437,8 +437,8 @@ dialog::backdrop{background:rgb(20 20 16/.45)}
     "url": "https://short.sen.re.kr",
     "title": "경상남도로 떠나는 단기형 농촌유학 | 흙을 밟는 도시 아이들",
     "description": "신청기간 2026. 10. 8.(목)~10. 14.(수), 운영기간 11~12월. 바다와 숲이 교실이 되는 일주일, 경남의 작은 학교들이 서울 학생을 기다려요!",
-    "image": "assets/og-image.jpg",
-    "kakaoImage": "assets/kakao-og-image.jpg",
+    "image": "https://short.sen.re.kr/assets/og-image.jpg",
+    "kakaoImage": "https://short.sen.re.kr/assets/kakao-og-image.jpg",
     "kakaoJsKey": "1a625dc7bea4e52543cb1297b0f03464",
     "kakaoSdk": "https://t1.kakaocdn.net/kakao_js_sdk/2.8.3/kakao.min.js"
   }
@@ -708,7 +708,7 @@ dialog::backdrop{background:rgb(20 20 16/.45)}
     <p class="desc reveal" style="--d:2">학교 번호를 누르거나 마우스를 올리면 정보가 나와요. ＋ 버튼이나 두 손가락으로 크게 볼 수 있어요.</p>
     <div class="map-layout reveal" style="--d:3">
         <div class="map-box">
-          <div class="map-canvas" id="map-canvas"><noscript><img src="assets/map-static.webp" alt="경남 단기형 농어촌유학 운영 학교 12곳의 위치 지도"></noscript></div>
+          <div class="map-canvas" id="map-canvas"><noscript><img src="https://short.sen.re.kr/assets/map-static.webp" alt="경남 단기형 농어촌유학 운영 학교 12곳의 위치 지도"></noscript></div>
           <div class="map-ctrl" id="map-ctrl"><button type="button" id="zin" aria-label="지도 확대">＋</button><button type="button" id="zout" aria-label="지도 축소">－</button><button type="button" id="zreset" aria-label="지도를 처음 크기로">⟲</button></div>
           <p class="map-src">지도 경계: 통계청</p>
         </div>
@@ -951,7 +951,7 @@ function mcard(s) {
   <div class="mc-act"><a class="btn sm" href="#school-${n}" data-open="${n}">학교 자세히 보기</a>${s['소개자료 링크'] ? `<button type="button" class="btn ghost sm" data-pdf="${n}">소개자료</button>` : ''}${tel ? `<a class="btn ghost sm" href="${telHref(tel)}">학교 전화</a>` : ''}</div>`;
 }
 function mapFallback() {
-  $('#map-canvas').innerHTML = '<img src="assets/map-static.webp" loading="lazy" alt="경남 단기형 농어촌유학 운영 학교 12곳 위치 지도: 거창 북상초·웅양초, 합천 봉산초, 하동 화개초 왕성분교장, 함안 월촌초, 고성 동해초, 남해 남명초·이동초·상주초, 통영 욕지초·욕지중, 양산 하북초">';
+  $('#map-canvas').innerHTML = '<img src="https://short.sen.re.kr/assets/map-static.webp" loading="lazy" alt="경남 단기형 농어촌유학 운영 학교 12곳 위치 지도: 거창 북상초·웅양초, 합천 봉산초, 하동 화개초 왕성분교장, 함안 월촌초, 고성 동해초, 남해 남명초·이동초·상주초, 통영 욕지초·욕지중, 양산 하북초">';
   $('#map-ctrl').hidden = true;
   mapApply = null;
 }
