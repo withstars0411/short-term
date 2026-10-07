@@ -431,7 +431,7 @@ dialog::backdrop{background:rgb(20 20 16/.45)}
   ],
   "sheet": {
     "enabled": true,
-    "csvUrl": "https://docs.google.com/spreadsheets/d/1fDbYHeRM5hQc7shsuLjsfaXTmetUFrlDItoVIcYfCGQ/gviz/tq?tqx=out:csv&range=A3:N40&headers=1"
+    "csvUrl": "https://docs.google.com/spreadsheets/d/1fDbYHeRM5hQc7shsuLjsfaXTmetUFrlDItoVIcYfCGQ/gviz/tq?tqx=out:csv&range=A3:O40&headers=1"
   },
   "share": {
     "url": "https://short.sen.re.kr",
@@ -826,6 +826,7 @@ const MAP = {"w":1000,"h":968,"gn":[{"n":"합천","t":1,"c":[352,267],"d":"M365 
 const RM = matchMedia('(prefers-reduced-motion: reduce)');
 const behavior = () => (RM.matches ? 'auto' : 'smooth');
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const homeUrl = s => { const u = String(s['홈페이지 주소'] || '').trim(); return /^https?:\/\//i.test(u) ? u : ''; };
 const lines = v => String(v ?? '').split(/\r?\n/).map(x => x.trim()).filter(Boolean);
 const one = v => lines(v).join(' ');
 const nm = s => one(s['학교명']);
@@ -908,7 +909,7 @@ function card(s) {
     <h4>주요 특색 프로그램</h4>${bullets(s['주요 특색프로그램'])}
     <h4>지역 특색</h4>${bullets(s['지역 특색'])}
     <h4>숙박 가능 시설</h4><p class="stay">${linkTel(lines(s['숙박 가능 시설 현황']).map(esc).join('<br>'))}</p>
-    <p class="sc-tel">${lines(s['학교 연락처']).map(t => `<a class="btn ghost sm" href="${telHref(t)}">학교 전화 ${esc(t)}</a>`).join('')}</p>
+    <p class="sc-tel">${lines(s['학교 연락처']).map(t => `<a class="btn ghost sm" href="${telHref(t)}">학교 전화 ${esc(t)}</a>`).join('')}${homeUrl(s) ? `<a class="btn ghost sm" href="${esc(homeUrl(s))}" target="_blank" rel="noopener">학교 홈페이지</a>` : ''}</p>
   </details></article>`;
 }
 let region = '전체';
